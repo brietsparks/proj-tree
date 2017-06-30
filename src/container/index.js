@@ -1,30 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Widget from '../components/Widget';
-import FoobarSelector from './selectors';
 
-import { dummyAction } from './actions';
+import Project from '../components/Project';
 
 export class RootContainer extends React.Component {
   render() {
-    return (
-      <Widget
-        foobar={this.props.foobar}
-        doDummyAction={this.props.doDummyAction}
+    const components = this.props.projects.map(project => {
+      console.log(project);
+      return <Project
+        key={project.id}
+        {...project}
       />
+    });
+    
+    return (
+      <div>
+        {components}
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    foobar: FoobarSelector(state)
+
   }
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    doDummyAction: (dummyArg) => dispatch(dummyAction({ dummyArg }))
+
   }
 }
 

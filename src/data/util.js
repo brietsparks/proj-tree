@@ -1,0 +1,1 @@
+export const loreumIpsum = (arg = '') => arg + ': Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis arcu a massa ornare rhoncus. Morbi ultricies posuere porta. Nulla sit amet varius leo. Etiam lacinia tellus convallis, ultricies sem in, tristique dui.';

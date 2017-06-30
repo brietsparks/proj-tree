@@ -5,9 +5,11 @@ import { store } from "./store.js";
 
 import RootContainer from './container';
 
+import history from './data/history';
+
 ReactDOM.render(
   <Provider store={store}>
-    <RootContainer />
+    <RootContainer projects={history}/>
   </Provider>,
   document.getElementById('app')
 );
